@@ -8,15 +8,14 @@ import org.openqa.selenium.support.PageFactory;
 
 public class GoogleBusquedaPageFactory {
 
-	@FindBy(name = "q")
+	/*@FindBy(name = "q")
 	private WebElement campoDeBusqueda;
 
-	@FindBy(name = "btnK")
-	private WebElement botonBuscar;
+	
+	@FindBy (className = " result--more__btn btn btn--full")
+	private WebElement botonSig;
 
-	public GoogleBusquedaPageFactory(WebDriver driver) {
-		PageFactory.initElements(driver, this);
-	}
+	
 
 	public void ingresarBusqueda(String consulta) {
 		campoDeBusqueda.sendKeys(consulta);
@@ -26,9 +25,13 @@ public class GoogleBusquedaPageFactory {
 	public void clickBotonBuscar() {
 		botonBuscar.submit();
 	}
-
-	public void buscar(String consulta) {
-		ingresarBusqueda(consulta);
-		clickBotonBuscar();
+*/
+	
+	
+	@FindBy(xpath="//*/div[2]/div/div/nav/div[1]/a")
+	WebElement signIn;
+	
+	public GoogleBusquedaPageFactory(WebDriver driver) {
+		PageFactory.initElements(driver, this);
 	}
 }

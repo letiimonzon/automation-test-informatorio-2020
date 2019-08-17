@@ -13,14 +13,16 @@ public class GoogleBusquedaPageObject {
 		this.driver = driver;
 	}
 
-	public void ingresarBusqueda(String consulta) {
+	/*public void ingresarBusqueda(String consulta) {
 		WebElement campoDeBusqueda = driver.findElement(By.name("q"));
 		campoDeBusqueda.sendKeys(consulta);
 		campoDeBusqueda.sendKeys(Keys.TAB);
-	}
+	}*/
 	
-	public void clickBotonBuscar() {
-		WebElement botonBuscar = driver.findElement(By.name("btnK"));
-		botonBuscar.submit();
+	public void buscarsignIn() {
+		WebElement buscarsignIn = driver.findElement(By.xpath("//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a"));
+		buscarsignIn.click();
 	}
+
+	
 }

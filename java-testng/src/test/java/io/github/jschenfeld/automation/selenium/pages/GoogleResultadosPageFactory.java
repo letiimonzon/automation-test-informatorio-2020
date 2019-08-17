@@ -7,14 +7,14 @@ import org.openqa.selenium.support.PageFactory;
 
 public class GoogleResultadosPageFactory {
 
-	@FindBy(xpath = "//a/h3[text()='Informatorio - Polo IT Chaco']")
-	private WebElement poloItlink;
+	@FindBy(xpath = "//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a")
+	private WebElement ingresolink;
 	
 	public GoogleResultadosPageFactory(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void abrirLaPaginaDelPoloIt() {
-		poloItlink.click();
+	public void abrirLaPaginaDeIngreso() {
+		ingresolink.click();
 	}
 }

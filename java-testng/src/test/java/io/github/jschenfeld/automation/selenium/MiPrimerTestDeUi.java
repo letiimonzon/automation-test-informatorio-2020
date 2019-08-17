@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import io.github.jschenfeld.automation.selenium.pages.GoogleBusquedaPageFactory;
+//import io.github.jschenfeld.automation.selenium.pages.GoogleBusquedaPageFactory;
 import io.github.jschenfeld.automation.selenium.pages.GoogleBusquedaPageObject;
 import io.github.jschenfeld.automation.selenium.pages.GoogleResultadosPageFactory;
 
@@ -25,27 +25,27 @@ public class MiPrimerTestDeUi {
 //		driver = new FirefoxDriver();
 	}
 
-	@Test(enabled = false)
+	/*@Test (enabled = false)
 	public void busquedaEnGoogle() {
-		driver.get("https://www.google.com.ar");
+		driver.get("http://automationpractice.com");
 
 		GoogleBusquedaPageObject googleBusquedaPage = new GoogleBusquedaPageObject(driver);
-		googleBusquedaPage.ingresarBusqueda("Informatorio Chaco");
-		googleBusquedaPage.clickBotonBuscar();
+		googleBusquedaPage.buscarsignIn("Sign in");
+		googleBusquedaPage.clicksignIn();
 
 		System.out.println(driver.getCurrentUrl());
 	}
-
+*/
 	@Test
 	public void busquedaEnGoogleUsandoPageFactory() {
-		driver.get("https://www.google.com.ar");
+		driver.get("http://automationpractice.com");
 
 		GoogleBusquedaPageFactory googleBusquedaPage = new GoogleBusquedaPageFactory(driver);
-		googleBusquedaPage.buscar("Informatorio Chaco");
+		googleBusquedaPage.buscarsignIn("Sign in");
 		GoogleResultadosPageFactory googleResultadosPageFactory = new GoogleResultadosPageFactory(driver);
-		googleResultadosPageFactory.abrirLaPaginaDelPoloIt();
+		googleResultadosPageFactory.abrirLaPaginaDeIngreso();
 		System.out.println(driver.getCurrentUrl());
-		Assert.assertEquals("https://poloitchaco.org.ar/informatorio/", driver.getCurrentUrl());
+		Assert.assertEquals("http://automationpractice.com", driver.getCurrentUrl());
 	}
 
 	@AfterMethod(alwaysRun = true)
